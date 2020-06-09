@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Home from './components/Home'
+import Rating from './components/Rating'
 import { BrowserRouter as Router, NavLink, Switch, Route, Link, Redirect } from 'react-router-dom';
 import Businesses from './components/Businesses';
 import ScrollTop from "react-scrolltop-button";
@@ -12,7 +13,8 @@ function App() {
         <header className="App-header">
           <Router>
             <Redirect from='/' to='/home'/>
-            <ScrollTop />
+            <ScrollTop
+              style={{ backgroundColor: "inherit" }} />
             <div className='Navbar'>
             <div>
             <NavLink
@@ -47,6 +49,7 @@ function App() {
             <Switch>
               <Route exact path='/home'>
                 <Home/>
+                <Rating/>
               </Route>
               <Route exact path="/selling">
                 <Businesses />
