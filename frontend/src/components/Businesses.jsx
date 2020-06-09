@@ -61,7 +61,7 @@ class Businesses extends Component {
                       <div className="w3-container">
                       <p>Contact name: random name</p>
                         <p>Contact number: 1234567</p>
-                        <p>company adress: random also</p>
+                        <p>Company location: random also</p>
                         <p>Fields: toys health real estate</p>
                         <p>CEO at Mighty Schools. Marketing and Advertising. Seeking a new job and new opportunities.</p>
                       </div>
