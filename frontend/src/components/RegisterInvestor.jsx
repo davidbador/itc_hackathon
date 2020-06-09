@@ -10,14 +10,44 @@ class RegisterInvestor extends Component {
             lastName: '',
             email: '',
             password: '',
+            places: [],
+            are: false,
+            aus: false,
+            bra: false,
+            can: false,
+            che: false,
+            chn: false,
+            deu: false,
+            gbr: false,
+            ind: false,
+            isr: false,
+            jpn: false,
+            nld: false,
+            usa: false,
+            industries: [],
+            foodAndBeverage: false,
+            tech: false,
+            health: false,
+            toys: false,
+            fashion: false,
+            realEstate: false,
+            gaming: false,
+            marketing: false
         }
 
         this.onChange = this.onChange.bind(this);
+        this.handleCheckBox = this.handleCheckBox.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
 
     onChange(event) {
         this.setState({ [event.target.name]: event.target.value })
+    }
+
+    handleCheckBox(event, item) {
+        const newState = {};
+        newState[item] = !this.state[item];
+        this.setState({...this.state, ...newState})
     }
 
     onSubmit(event) {
@@ -27,7 +57,9 @@ class RegisterInvestor extends Component {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             email: this.state.email,
-            password: this.state.password
+            password: this.state.password,
+            places: this.state.places,
+            industries: this.state.industries
         }
 
         register(newInvestor).then(res => {
@@ -57,31 +89,31 @@ class RegisterInvestor extends Component {
                     </div>
                     <div>
                         <label> Countries you are interested in investing in:
-                            <input type="checkbox" name="ARE" value="ARE" />ARE
-                            <input type="checkbox" name="AUS" value="AUS" />AUS
-                            <input type="checkbox" name="BRA" value="BRA" />BRA
-                            <input type="checkbox" name="CAN" value="CAN" />CAN
-                            <input type="checkbox" name="CHE" value="CHE" />CHE
-                            <input type="checkbox" name="CHN" value="CHN" />CHN
-                            <input type="checkbox" name="DEU" value="DEU" />DEU
-                            <input type="checkbox" name="GBR" value="GBR" />GBR
-                            <input type="checkbox" name="IND" value="IND" />IND
-                            <input type="checkbox" name="ISR" value="ISR" />ISR
-                            <input type="checkbox" name="JPN" value="JPN" />JPN
-                            <input type="checkbox" name="NLD" value="NLD" />NLD
-                            <input type="checkbox" name="USA" value="USA" />USA
+                            <input type="checkbox" checked={this.state.are} name="ARE" value="ARE" onChange={event => this.handleCheckBox(event, "ARE")}/>ARE
+                            <input type="checkbox" checked={this.state.aus} name="AUS" value="AUS" onChange={event => this.handleCheckBox(event, "AUS")}/>AUS
+                            <input type="checkbox" checked={this.state.bra} name="BRA" value="BRA" onChange={event => this.handleCheckBox(event, "BRA")}/>BRA
+                            <input type="checkbox" checked={this.state.can} name="CAN" value="CAN" onChange={event => this.handleCheckBox(event, "CAN")}/>CAN
+                            <input type="checkbox" checked={this.state.che} name="CHE" value="CHE" onChange={event => this.handleCheckBox(event, "CHE")}/>CHE
+                            <input type="checkbox" checked={this.state.chn} name="CHN" value="CHN" onChange={event => this.handleCheckBox(event, "CHN")}/>CHN
+                            <input type="checkbox" checked={this.state.deu} name="DEU" value="DEU" onChange={event => this.handleCheckBox(event, "DEU")}/>DEU
+                            <input type="checkbox" checked={this.state.gbr} name="GBR" value="GBR" onChange={event => this.handleCheckBox(event, "GBR")}/>GBR
+                            <input type="checkbox" checked={this.state.ind} name="IND" value="IND" onChange={event => this.handleCheckBox(event, "IND")}/>IND
+                            <input type="checkbox" checked={this.state.isr} name="ISR" value="ISR" onChange={event => this.handleCheckBox(event, "ISR")}/>ISR
+                            <input type="checkbox" checked={this.state.jpn} name="JPN" value="JPN" onChange={event => this.handleCheckBox(event, "JPN")}/>JPN
+                            <input type="checkbox" checked={this.state.nld} name="NLD" value="NLD" onChange={event => this.handleCheckBox(event, "NLD")}/>NLD
+                            <input type="checkbox" checked={this.state.usa} name="USA" value="USA" onChange={event => this.handleCheckBox(event, "USA")}/>USA
                         </label>
                     </div>
                     <div>
                         <label> Industries you are interested in investing in:
-                            <input type="checkbox" name="food" value="Food and Beverage" />Food and Beverage
-                            <input type="checkbox" name="tech" value="Tech" />Tech
-                            <input type="checkbox" name="health" value="Health" />Health
-                            <input type="checkbox" name="toys" value="Toys" />Toys
-                            <input type="checkbox" name="fashion" value="Fashion" />
-                            <input type="checkbox" name="real" value="Real Estate" />Real Estate
-                            <input type="checkbox" name="gaming" value="Gaming" />Gaming
-                            <input type="checkbox" name="marketing" value="Marketing" />Marketing
+                            <input type="checkbox" checked={this.state.foodAndBeverage} name="food" value="Food and Beverage" onChange={event => this.handleCheckBox(event, "Food and Beverage")}/>Food and Beverage
+                            <input type="checkbox" checked={this.state.tech} name="tech" value="Tech" onChange={event => this.handleCheckBox(event, "Tech")}/>Tech
+                            <input type="checkbox" checked={this.state.health} name="health" value="Health" onChange={event => this.handleCheckBox(event, "Health")}/>Health
+                            <input type="checkbox" checked={this.state.toys} name="toys" value="Toys" onChange={event => this.handleCheckBox(event, "Toys")}/>Toys
+                            <input type="checkbox" checked={this.state.fashion} name="fashion" value="Fashion" onChange={event => this.handleCheckBox(event, "Fashion")}/>
+                            <input type="checkbox" checked={this.state.realEstate} name="real" value="Real Estate" onChange={event => this.handleCheckBox(event, "Real Estate")}/>Real Estate
+                            <input type="checkbox" checked={this.state.gaming} name="gaming" value="Gaming" onChange={event => this.handleCheckBox(event, "Gaming")}/>Gaming
+                            <input type="checkbox" checked={this.state.marketing} name="marketing" value="Marketing" onChange={event => this.handleCheckBox(event, "Marketing")}/>Marketing
                         </label>
                     </div>
                     <button type="submit">
