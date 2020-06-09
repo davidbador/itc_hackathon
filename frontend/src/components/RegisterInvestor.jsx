@@ -51,6 +51,8 @@ class RegisterInvestor extends Component {
         this.setState({...this.state, ...newState})
         if (this.state[item] === true) {
             this.state.places.push(item)
+        } else {
+            this.removePlace(event)
         }
     }
 
@@ -60,6 +62,26 @@ class RegisterInvestor extends Component {
         this.setState({...this.state, ...newState})
         if (this.state[item] === true) {
             this.state.industries.push(item)
+        } else {
+            this.removeIndustry(event)
+        }
+    }
+
+    removePlace(event) {
+        let array = [...this.state.places]
+        let index = array.indexOf(event.target.value)
+        if (index !== -1) {
+            array.splice(index, 1);
+            this.setState({places: array})
+        }
+    }
+
+    removeIndustry(event) {
+        let array = [...this.state.industries]
+        let index = array.indexOf(event.target.value)
+        if (index !== -1) {
+            array.splice(index, 1);
+            this.setState({industries: array})
         }
     }
 
