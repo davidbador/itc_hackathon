@@ -22,20 +22,19 @@ class Businesses extends Component {
 
     render() {
         return (
-            <>
+            <div>
                 <h1>Test</h1>
                 {this.state.businesses.map((el) => el.businesses.map((c, i) => (
                     <div key={i}>
                         <div>{c.business_name}</div>
                         <div>{c.industry}</div>
-                        <div>{c.number_of_employees}</div>
-                        <div>{c.address}</div>
+                        <div>{c.country}</div>
                         <div>{c.contact_name}</div>
                         <div>{c.phone}</div>
                         <p>{c.description}</p>
                     </div>
                 )))}
-            </>
+            </div>
         )
     }
 }
