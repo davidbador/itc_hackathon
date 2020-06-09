@@ -38,3 +38,5 @@ class Businesses extends Component {
         )
     }
 }
+
+export default Businesses

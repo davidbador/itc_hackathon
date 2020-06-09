@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Home from './components/Home'
 import { BrowserRouter as Router, NavLink, Switch, Route, Link, Redirect } from 'react-router-dom';
+import Businesses from './components/Businesses';
 
 
 function App() {
@@ -44,6 +45,9 @@ function App() {
             <Switch>
               <Route path='/home'>
                 <Home/>
+              </Route>
+              <Route path="/selling">
+                <Businesses />
               </Route>
             </Switch>
           </Router>
