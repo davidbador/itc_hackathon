@@ -3,6 +3,7 @@ import './App.css';
 import Home from './components/Home'
 import { BrowserRouter as Router, NavLink, Switch, Route, Link, Redirect } from 'react-router-dom';
 import Businesses from './components/Businesses';
+import ScrollTop from "react-scrolltop-button";
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
         <header className="App-header">
           <Router>
             <Redirect from='/' to='/home'/>
+            <ScrollTop />
             <div className='Navbar'>
             <div>
             <NavLink

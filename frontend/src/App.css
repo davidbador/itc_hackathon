@@ -3,8 +3,8 @@
 }
 
 .Logo {
-  height: 15vh;
-  pointer-events: none;
+  height: 15vmin;
+
 }
 
 .Spin {
@@ -37,7 +37,7 @@
 .Navbar {
   font-family: 'Roboto Slab', serif;
   position: absolute;
-  top: 0;
+  top: 1%;
   width: 90%;
   background-color: #34C54C;
   text-align: left; 
@@ -64,6 +64,6 @@
 }
 
 .Sign {
-  padding-right: 7%;
+  padding-right: 10%;
 }
 
