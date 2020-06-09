@@ -32,6 +32,7 @@ class DataLayer:
         last_name = request.get_json()['last_name']
         email = request.get_json()['email']
         password = bcrypt.generate_password_hash(request.get_json()['password']).decode('utf-8')
+        
         list_of_places = ['ARE', 'AUS', 'BRA', 'CAN', 'CHE', 'CHN', 'DEU', 'GBR', 'IND','ISR', 'JPN', 'NLD', 'USA']
         chosen_places = []
         list_of_industries = ['Food and Beverage', 'Tech', 'Health', 'Toys', 'Fashion', 'Real Estate', 'Gaming',

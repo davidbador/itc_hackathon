@@ -66,3 +66,7 @@ def log_in_investor():
         result = jsonify({'result': 'No results found'})
 
     return result
+
+
+if __name__ == '__main__':
+    app.run()

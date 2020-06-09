@@ -55,6 +55,35 @@ class RegisterInvestor extends Component {
                         <label htmlFor="password">Password</label>
                         <input type="password" name="password" placeholder="Enter Password" value={this.state.password} onChange={this.onChange} />
                     </div>
+                    <div>
+                        <label> Countries you are interested in investing in:
+                            <input type="checkbox" name="ARE" value="ARE">ARE</input>
+                            <input type="checkbox" name="AUS" value="AUS">AUS</input>
+                            <input type="checkbox" name="BRA" value="BRA">BRA</input>
+                            <input type="checkbox" name="CAN" value="CAN">CAN</input>
+                            <input type="checkbox" name="CHE" value="CHE">CHE</input>
+                            <input type="checkbox" name="CHN" value="CHN">CHN</input>
+                            <input type="checkbox" name="DEU" value="DEU">DEU</input>
+                            <input type="checkbox" name="GBR" value="GBR">GBR</input>
+                            <input type="checkbox" name="IND" value="IND">IND</input>
+                            <input type="checkbox" name="ISR" value="ISR">ISR</input>
+                            <input type="checkbox" name="JPN" value="JPN">JPN</input>
+                            <input type="checkbox" name="NLD" value="NLD">NLD</input>
+                            <input type="checkbox" name="USA" value="USA">USA</input>
+                        </label>
+                    </div>
+                    <div>
+                        <label> Industries you are interested in investing in:
+                            <input type="checkbox" name="food" value="Food and Beverage">Food and Beverage</input>
+                            <input type="checkbox" name="tech" value="Tech">Tech</input>
+                            <input type="checkbox" name="health" value="Health">Health</input>
+                            <input type="checkbox" name="toys" value="Toys">Toys</input>
+                            <input type="checkbox" name="fashion" value="Fashion">Fashion</input>
+                            <input type="checkbox" name="real" value="Real Estate">Real Estate</input>
+                            <input type="checkbox" name="gaming" value="Gaming">Gaming</input>
+                            <input type="checkbox" name="marketing" value="Marketing">Marketing</input>
+                        </label>
+                    </div>
                     <button type="submit">
                         Sign up
                     </button>
