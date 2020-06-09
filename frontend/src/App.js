@@ -37,6 +37,7 @@ function App() {
                 Opportunities
               </NavLink>
             </div>
+            <div className='Sign-links'>
             <NavLink
               to="/login"
               className='Sign'
@@ -55,11 +56,12 @@ function App() {
               }}>
               Register
             </NavLink>
+            </div>
           </div>
           <Switch>
             <Route exact path='/home'>
               <Home />
-              <Rating />
+              <Rating/>
             </Route>
             <Route exact path="/opportunities">
               <Businesses />

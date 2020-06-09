@@ -1,15 +1,6 @@
 import React, { Component } from 'react';
 import { businesses } from '../lib/CorPortunityFunctions'
 
-const ColoredLine = ({ color }) => (
-    <hr
-        style={{
-            color: color,
-            height: 2
-        }}
-    />
-);
-
 class Businesses extends Component {
     constructor() {
         super();
@@ -40,7 +31,7 @@ class Businesses extends Component {
                         <div className="w3-card-4">
                             <header className="w3-container w3-light-green">
                                 <h3>Company name:{c.company}</h3>
-                                <ColoredLine color="grey" />
+                                
                             </header>
                             <div className="w3-container">
                                 <p>Contact name: {c.contact_name}</p>
@@ -56,7 +47,19 @@ class Businesses extends Component {
                     <div className="w3-card-4">
                         <header className="w3-container w3-light-green">
                             <h3>Company name: random</h3>
-                            <ColoredLine color="grey" />
+                            
+                        </header>
+                        <div className="w3-container">
+                            <p>Contact name: random name</p>
+                            <p>Contact number: 1234567</p>
+                            <p>company address: random also</p>
+                            <p>Fields: toys health real estate</p>
+                            <p>CEO at Mighty Schools. Marketing and Advertising. Seeking a new job and new opportunities.</p>
+                        </div>
+                    </div>
+                    <div className="w3-card-4">
+                        <header className="w3-container w3-light-green">
+                            <h3>Company name: random</h3>
                         </header>
                         <div className="w3-container">
                             <p>Contact name: random name</p>
