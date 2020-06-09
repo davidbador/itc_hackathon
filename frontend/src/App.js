@@ -4,7 +4,9 @@ import Home from './components/Home'
 import Rating from './components/Rating'
 import { BrowserRouter as Router, NavLink, Switch, Route, Link, Redirect } from 'react-router-dom';
 import Businesses from './components/Businesses';
+import RegisterInvestor from './components/RegisterInvestor';
 import ScrollTop from "react-scrolltop-button";
+import LoginInvestor from './components/LoginInvestor';
 
 
 function App() {
@@ -17,48 +19,61 @@ function App() {
               style={{ backgroundColor: "inherit" }} />
             <div className='Navbar'>
             <div>
-            <NavLink
-              to="/home"
-              activeStyle={{
-                fontWeight: "bold",
-                color: "white"
-              }}>
-              Home
-            </NavLink>
-            <NavLink
-              to="/selling"
-              style={{ marginInlineStart: '40px' }}
-              activeStyle={{
-                fontWeight: "bold",
-                color: "white"
-              }}>
-              Sell
-            </NavLink>
+              <NavLink
+                to="/home"
+                activeStyle={{
+                  fontWeight: "bold",
+                  color: "white"
+                }}>
+                Home
+              </NavLink>
+              <NavLink
+                to="/opportunities"
+                style={{ marginInlineStart: '40px' }}
+                activeStyle={{
+                  fontWeight: "bold",
+                  color: "white"
+                }}>
+                Opportunities
+              </NavLink>
             </div>
             <NavLink
-              to="/user"
+              to="/login"
               className='Sign'
-              
               activeStyle={{
                 fontWeight: "bold",
                 color: "white"
               }}>
-              Login \ Sign Up
+              Login
             </NavLink>
-            </div>
-            <Switch>
-              <Route exact path='/home'>
-                <Home/>
-                <Rating/>
-              </Route>
-              <Route exact path="/selling">
-                <Businesses />
-              </Route>
-            </Switch>
-          </Router>
+            <NavLink
+              to="/register"
+              className='Sign'
+              activeStyle={{
+                fontWeight: "bold",
+                color: "white"
+              }}>
+              Register
+            </NavLink>
+          </div>
+          <Switch>
+            <Route exact path='/home'>
+              <Home />
+            </Route>
+            <Route exact path="/opportunities">
+              <Businesses />
+            </Route>
+            <Route exact path="/login">
+              <LoginInvestor />
+            </Route>
+            <Route exact path="/register">
+              <RegisterInvestor />
+            </Route>
+          </Switch>
+        </Router>
       </header>
     </div>
-    );
+  );
 }
 
 export default App;
