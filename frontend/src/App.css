@@ -2,10 +2,20 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.Logo {
+  height: 15vh;
   pointer-events: none;
 }
+
+.Spin {
+  height: 30vmin;
+  -webkit-animation:spin 10s linear infinite;
+  -moz-animation:spin 10s linear infinite;
+  animation:spin 10s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 
 .App-header {
@@ -25,7 +35,7 @@
 
 
 .Navbar {
-  font-family: 'Tenali Ramakrishna', sans-serif;
+  font-family: 'Roboto Slab', serif;
   position: absolute;
   top: 0;
   width: 90%;
