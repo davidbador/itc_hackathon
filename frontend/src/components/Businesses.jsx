@@ -24,7 +24,6 @@ class Businesses extends Component {
     render() {
         return (
             <div>
-                <h1>Test</h1>
                 <a target="_blank" rel="noopener noreferrer" href='https://docs.google.com/forms/d/e/1FAIpQLSfkBwBt1IVitTuG5nHG5PS3n_yQkCQztXR77PC7eHLyFZc0xQ/viewform?usp=sf_link'>Join us! </a>
                 {this.state.businesses.map((el) => el.businesses.map((c, i) => (
                     <div key={i} className="Selling">
