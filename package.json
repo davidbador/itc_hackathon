@@ -1,9 +1,9 @@
 {
-<<<<<<< HEAD
+
   "name": "hackathon",
-=======
+
   "name": "my-app",
->>>>>>> origin/master
+
   "version": "0.1.0",
   "private": true,
   "dependencies": {
