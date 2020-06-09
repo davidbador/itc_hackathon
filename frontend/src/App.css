@@ -39,6 +39,7 @@
 }
 
 .Selling {
+  margin-top: 20vh;
   font-family: 'Noto Sans JP', sans-serif;
   display:grid;
   grid-gap: 2vw;
@@ -54,6 +55,10 @@
 
 .Selling p{
   margin: 5px; 
+}
+
+.Spacing {
+  margin-top: 10vh;
 }
 
 .About {
@@ -107,3 +112,33 @@
 .Rate-box {
 
 }
+
+.Black-text {
+  color: black;
+}
+
+.Sign-up {
+  box-shadow: 0px 10px 14px -7px #3e7327;
+  background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+  background-color:#77b55a;
+  border-radius:4px;
+  border:1px solid #4b8f29;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:13px;
+  font-weight:bold;
+  padding:6px 12px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #5b8a3c;
+}
+.Sign-up:hover {
+  background:linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
+  background-color:#72b352;
+}
+.Sign-up:active {
+  position:relative;
+  top:1px;
+}
+

@@ -36,7 +36,7 @@ class LoginInvestor extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='Black-text'>
                 <form noValidate onSubmit={this.onSubmit}>
                     <div>
                         <label htmlFor="email">Email Address</label>

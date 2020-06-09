@@ -23,7 +23,7 @@ class Businesses extends Component {
 
     render() {
         return (
-            <div>
+            <div className='Spacing'>
                 <a target="_blank" rel="noopener noreferrer" href='https://docs.google.com/forms/d/e/1FAIpQLSfkBwBt1IVitTuG5nHG5PS3n_yQkCQztXR77PC7eHLyFZc0xQ/viewform?usp=sf_link'>Join us! </a>
                 {this.state.businesses.map((el) => el.businesses.map((c, i) => (
                     <div key={i} className="Selling">
@@ -57,6 +57,18 @@ class Businesses extends Component {
                         </div>
                     </div>
                     <div className="w3-card-4">
+                        <header className="w3-container w3-light-green">
+                            <h3>Company name: random</h3>
+                        </header>
+                        <div className="w3-container">
+                            <p>Contact name: random name</p>
+                            <p>Contact number: 1234567</p>
+                            <p>company address: random also</p>
+                            <p>Fields: toys health real estate</p>
+                            <p>CEO at Mighty Schools. Marketing and Advertising. Seeking a new job and new opportunities.</p>
+                        </div>
+                    </div>
+                                        <div className="w3-card-4">
                         <header className="w3-container w3-light-green">
                             <h3>Company name: random</h3>
                         </header>
