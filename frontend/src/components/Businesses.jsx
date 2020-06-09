@@ -22,7 +22,8 @@ class Businesses extends Component {
 
     render() {
         return (
-            <div>
+            <>
+                <h1>Test</h1>
                 {this.state.businesses.map((el) => el.businesses.map((c, i) => (
                     <div key={i}>
                         <div>{c.business_name}</div>
@@ -34,7 +35,7 @@ class Businesses extends Component {
                         <p>{c.description}</p>
                     </div>
                 )))}
-            </div>
+            </>
         )
     }
 }

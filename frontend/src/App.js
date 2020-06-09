@@ -43,10 +43,10 @@ function App() {
             </NavLink>
             </div>
             <Switch>
-              <Route path='/home'>
+              <Route exact path='/home'>
                 <Home/>
               </Route>
-              <Route path="/selling">
+              <Route exact path="/selling">
                 <Businesses />
               </Route>
             </Switch>
