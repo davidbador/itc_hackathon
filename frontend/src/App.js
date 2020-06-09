@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Home from './components/Home'
 import { BrowserRouter as Router, NavLink, Switch, Route, Link, Redirect } from 'react-router-dom';
 
 
@@ -22,7 +22,7 @@ function App() {
             </NavLink>
             <NavLink
               to="/selling"
-              style={{ marginInlineStart: '50px' }}
+              style={{ marginInlineStart: '40px' }}
               activeStyle={{
                 fontWeight: "bold",
                 color: "white"
@@ -41,6 +41,11 @@ function App() {
               Login \ Sign Up
             </NavLink>
             </div>
+            <Switch>
+              <Route path='/home'>
+                <Home/>
+              </Route>
+            </Switch>
           </Router>
       </header>
     </div>
