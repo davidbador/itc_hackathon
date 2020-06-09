@@ -10,14 +10,14 @@ import LoginInvestor from './components/LoginInvestor';
 
 
 function App() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <Router>
-            <Redirect from='/' to='/home'/>
-            <ScrollTop
-              style={{ backgroundColor: "inherit" }} />
-            <div className='Navbar'>
+  return (
+    <div className="App">
+      <header className="App-header">
+        <Router>
+          <Redirect from='/' to='/home' />
+          <ScrollTop
+            style={{ backgroundColor: "inherit" }} />
+          <div className='Navbar'>
             <div>
               <NavLink
                 to="/home"
@@ -59,6 +59,7 @@ function App() {
           <Switch>
             <Route exact path='/home'>
               <Home />
+              <Rating />
             </Route>
             <Route exact path="/opportunities">
               <Businesses />
