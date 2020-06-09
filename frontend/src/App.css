@@ -97,3 +97,13 @@
   padding-right: 10%;
 }
 
+.Rating {
+  color: black;
+  display: grid;
+  grid-gap: 10vw;
+  grid-template-columns: 30vh 30vh;  
+}
+
+.Rate-box {
+
+}
