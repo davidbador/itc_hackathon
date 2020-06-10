@@ -65,7 +65,11 @@ class RegisterInvestor extends Component {
 
     handleIndustriesArray(event, item) {
         if (this.state.industries.includes(item)) {
+<<<<<<< HEAD
+            this.removeIndustry(event)
+=======
             this.removeIndustry(item)
+>>>>>>> origin/master
         } else {
             let joined = this.state.industries.push(item)
             this.setState({
