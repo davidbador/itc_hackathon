@@ -129,7 +129,7 @@ class RegisterInvestor extends Component {
 
     render() {
         return (
-            <div className='Black-text'>
+            <div className='Black-text Register-form'>
                 <form noValidate onSubmit={this.onSubmit}>
                     <div>
                         <label htmlFor="firstName">First Name</label>

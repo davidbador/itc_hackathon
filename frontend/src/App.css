@@ -112,10 +112,6 @@
   grid-template-columns: 30vh 30vh;  
 }
 
-.Rate-box {
-
-}
-
 .Black-text {
   color: black;
 }
@@ -168,5 +164,9 @@
 .Sign-up:active {
   position:relative;
   top:1px;
+}
+
+.Register-form {
+  
 }
 
