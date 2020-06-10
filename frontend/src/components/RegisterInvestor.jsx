@@ -69,7 +69,7 @@ class RegisterInvestor extends Component {
         } else {
             let joined = this.state.industries.push(item)
             this.setState({
-                places: joined
+                industries: joined
             })
         }
     }
