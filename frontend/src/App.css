@@ -120,6 +120,31 @@
   color: black;
 }
 
+.Form-class form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Form-class input {
+  border: 1px solid #27CA3A;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: #08C049;
+  border-radius: .25rem;
+  padding: .75rem 1rem;
+}
+
+.Form-class button {
+  display: flex;
+  align-self: center;
+  margin-top: 2vh;
+}
+
+::placeholder {
+  color: #2E2B2B;
+}
 .Sign-up {
   box-shadow: 0px 10px 14px -7px #3e7327;
   background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
