@@ -7,6 +7,7 @@ import Businesses from './components/Businesses';
 import RegisterInvestor from './components/RegisterInvestor';
 import ScrollTop from "react-scrolltop-button";
 import LoginInvestor from './components/LoginInvestor';
+import NavBar from './components/NavBar';
 
 
 function App() {
@@ -17,47 +18,7 @@ function App() {
           <Redirect from='/' to='/home' />
           <ScrollTop
             style={{ backgroundColor: "inherit" }} />
-          <div className='Navbar'>
-            <div>
-              <NavLink
-                to="/home"
-                activeStyle={{
-                  fontWeight: "bold",
-                  color: "white"
-                }}>
-                Home
-              </NavLink>
-              <NavLink
-                to="/opportunities"
-                style={{ marginInlineStart: '40px' }}
-                activeStyle={{
-                  fontWeight: "bold",
-                  color: "white"
-                }}>
-                Opportunities
-              </NavLink>
-            </div>
-            <div className='Sign-links'>
-            <NavLink
-              to="/login"
-              className='Sign'
-              activeStyle={{
-                fontWeight: "bold",
-                color: "white"
-              }}>
-              Login
-            </NavLink>
-            <NavLink
-              to="/register"
-              className='Sign'
-              activeStyle={{
-                fontWeight: "bold",
-                color: "white"
-              }}>
-              Register
-            </NavLink>
-            </div>
-          </div>
+          <NavBar />
           <Switch>
             <Route exact path='/home'>
               <Home />
