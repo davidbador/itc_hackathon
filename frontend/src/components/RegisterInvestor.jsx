@@ -56,7 +56,7 @@ class RegisterInvestor extends Component {
         if (this.state.places.includes(item)) {
             this.removePlace(event)
         } else {
-            let joined = this.state.places.concat(item)
+            let joined = this.state.places.push(item)
             this.setState({
                 places: joined
             })
@@ -67,9 +67,9 @@ class RegisterInvestor extends Component {
         if (this.state.industries.includes(item)) {
             this.removeIndustry(event)
         } else {
-            let joined = this.state.industries.concat(item)
+            let joined = this.state.industries.push(item)
             this.setState({
-                places: joined
+                industries: joined
             })
         }
     }
