@@ -36,7 +36,7 @@ class LoginInvestor extends React.Component {
 
     render() {
         return (
-            <div className='Black-text'>
+            <div className='Black-text Form-class'>
                 <form noValidate onSubmit={this.onSubmit}>
                     <div>
                         <label htmlFor="email">Email Address</label>
@@ -46,7 +46,7 @@ class LoginInvestor extends React.Component {
                         <label htmlFor="password">Password</label>
                         <input type="password" name="password" placeholder="Enter Password" value={this.state.password} onChange={this.onChange} />
                     </div>
-                    <button>
+                    <button className='Sign-up'>
                         Log in
                     </button>
                 </form>
