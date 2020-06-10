@@ -27,11 +27,20 @@ class LoginInvestor extends React.Component {
             password: this.state.password
         }
 
-        login(user).then(res => {
-            if (!res.error) {
-                this.props.history.push('/opportunities')
-            }
-        })
+        if (user.email === '' || user.password === '') {
+            document.getElementById('danger').classList.remove('hide')
+            setTimeout(() => { document.getElementById('danger').classList.add('hide') }, 7000)
+        } else {
+            login(user).then(res => {
+                if (localStorage.usertoken !== "undefined") {
+                    this.props.history.push('/opportunities')
+                } else {
+                    document.getElementById('wrong').classList.remove('hide')
+                    setTimeout(() => { document.getElementById('wrong').classList.add('hide') }, 7000)
+                    localStorage.removeItem('usertoken')
+                }
+            })
+        }
     }
 
     render() {
@@ -50,6 +59,12 @@ class LoginInvestor extends React.Component {
                         Log in
                     </button>
                 </form>
+                <div id="danger" className="alert hide">
+                    Please make sure all fields are filled in!
+                </div>
+                <div id="wrong" className="alert hide">
+                    Wrong email or password. Please try again!
+                </div>
             </div>
         )
     }

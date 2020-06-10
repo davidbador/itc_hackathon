@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { register } from '../lib/CorPortunityFunctions';
+import { register, investors } from '../lib/CorPortunityFunctions';
 import { withRouter } from 'react-router-dom';
 
 class RegisterInvestor extends Component {
@@ -32,7 +32,8 @@ class RegisterInvestor extends Component {
             fashion: false,
             realEstate: false,
             gaming: false,
-            marketing: false
+            marketing: false,
+            investors: []
         }
 
         this.onChange = this.onChange.bind(this);
@@ -40,6 +41,17 @@ class RegisterInvestor extends Component {
         this.handlePlacesArray = this.handlePlacesArray.bind(this);
         this.handleIndustriesArray = this.handleIndustriesArray.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+    }
+
+    componentDidMount() {
+        this.loadInvestors()
+    }
+
+    loadInvestors = async () => {
+        const response = await investors()
+        this.setState({
+            investors: response.data
+        })
     }
 
     onChange(event) {
@@ -122,9 +134,21 @@ class RegisterInvestor extends Component {
             industries: this.state.industries
         }
 
-        register(newInvestor).then(res => {
-            this.props.history.push('/login')
-        })
+        if (newInvestor.firstName === '' || newInvestor.lastName === '' || newInvestor.email === '' || newInvestor.password === '' || newInvestor.places === [] || newInvestor.industries === []) {
+            document.getElementById('danger').classList.remove('hide')
+            setTimeout(() => { document.getElementById('danger').classList.add('hide') }, 7000)
+        } else {
+            for (let i = 0; i < this.state.investors.investors.length; i++) {
+                if (this.state.investors.investors[i].email === this.state.email) {
+                    document.getElementById('wrong').classList.remove('hide')
+                    setTimeout(() => { document.getElementById('wrong').classList.add('hide') }, 7000)
+                } else {
+                    register(newInvestor).then(res => {
+                        this.props.history.push('/login')
+                    })
+                }
+            }
+        }
     }
 
     render() {
@@ -180,6 +204,12 @@ class RegisterInvestor extends Component {
                         Sign up
                     </button>
                 </form>
+                <div id="danger" className="alert hide">
+                    Please make sure all fields are filled in!
+                </div>
+                <div id="wrong" className="alert hide">
+                    This user already exists with this email. Please try again!
+                </div>
             </div>
         )
     }

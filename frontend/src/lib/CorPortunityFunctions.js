@@ -30,3 +30,7 @@ export const login = user => {
 export const businesses = () => {
     return axios.get(`${baseURL}/businesses`)
 }
+
+export const investors = () => {
+    return axios.get(`${baseURL}/investors`)
+}
