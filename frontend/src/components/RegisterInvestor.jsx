@@ -75,21 +75,27 @@ class RegisterInvestor extends Component {
     }
 
     removePlace(item) {
-        let list = [...this.state.places]
-        let index = list.indexOf(item)
-        list.splice(index, 1)
         this.setState({
-            places: list
+            places: this.state.places.filter(function(i) {return i!==item})
         })
+        // let list = [...this.state.places]
+        // let index = list.indexOf(item)
+        // list.splice(index, 1)
+        // this.setState({
+        //     places: list
+        // })
     }
 
     removeIndustry(item) {
-        let list = [...this.state.industries]
-        let index = list.indexOf(item)
-        list.splice(index, 1)
         this.setState({
-            industries: list
+            industries: this.state.industries.filter(function(i) {return i!==item})
         })
+        // let list = [...this.state.industries]
+        // let index = list.indexOf(item)
+        // list.splice(index, 1)
+        // this.setState({
+        //     industries: list
+        // })
     }
 
     onSubmit(event) {
