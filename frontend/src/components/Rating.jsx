@@ -25,6 +25,7 @@ function Rating() {
 					<h1 style={{color:'#CAD700'}}>{String.fromCharCode(9733, 9733, 9733, 9733, 9733)}</h1>
 				</div>
 			</div>
+			<h3 style={{color:'black'}}>Contact us: corportunity@gmail.com</h3>
 		</div>
     );
 };

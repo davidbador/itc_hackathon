@@ -46,7 +46,6 @@
   grid-template-columns: 70vh 70vh;
   margin-top: 10vh;
   color: #4D4A4A;
-
   width: 50%;
   text-align: left;
   margin: 0em;
@@ -55,10 +54,13 @@
 
 .Selling p{
   margin: 5px; 
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 .Spacing {
-  margin-top: 10vh;
+  font-family: 'Roboto Slab', serif;
+  margin-top: 15vh;
+  color: black;
 }
 
 .About {
@@ -103,9 +105,10 @@
 }
 
 .Rating {
+  font-size: calc(10px + 1vmin);
   color: black;
   display: grid;
-  grid-gap: 10vw;
+  grid-gap: 5vw;
   grid-template-columns: 30vh 30vh;  
 }
 
