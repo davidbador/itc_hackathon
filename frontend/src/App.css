@@ -127,6 +127,7 @@ html {
 }
 
 .Form-class form {
+  
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -205,15 +206,4 @@ input[type=checkbox] {
 
 .Inputs div {
   margin-bottom: 4vh;
-}
-
-.alert {
-  padding: 20px;
-  background-color: red;
-  color: white;
-  margin-bottom: 15px;
-}
-
-.hide {
-  display: none;
 }

@@ -134,14 +134,12 @@ class RegisterInvestor extends Component {
             industries: this.state.industries
         }
 
-        if (newInvestor.firstName === '' || newInvestor.lastName === '' || newInvestor.email === '' || newInvestor.password === '' || newInvestor.places === [] || newInvestor.industries === []) {
-            document.getElementById('danger').classList.remove('hide')
-            setTimeout(() => { document.getElementById('danger').classList.add('hide') }, 7000)
+        if (newInvestor.firstName === '' || newInvestor.lastName === '' || newInvestor.email === '' || newInvestor.password === '' || newInvestor.places == [] || newInvestor.industries == []) {
+            window.alert('Please make sure all fields are filled in!')
         } else {
             for (let i = 0; i < this.state.investors.investors.length; i++) {
                 if (this.state.investors.investors[i].email === this.state.email) {
-                    document.getElementById('wrong').classList.remove('hide')
-                    setTimeout(() => { document.getElementById('wrong').classList.add('hide') }, 7000)
+                    window.alert('This user already exists with this email. Please try again!')
                 } else {
                     register(newInvestor).then(res => {
                         this.props.history.push('/login')
@@ -204,12 +202,6 @@ class RegisterInvestor extends Component {
                         Sign up
                     </button>
                 </form>
-                <div id="danger" className="alert hide">
-                    Please make sure all fields are filled in!
-                </div>
-                <div id="wrong" className="alert hide">
-                    This user already exists with this email. Please try again!
-                </div>
             </div>
         )
     }
