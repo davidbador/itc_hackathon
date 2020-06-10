@@ -1,8 +1,6 @@
 import pymongo
-from flask import Flask, request, json
-from bson.objectid import ObjectId
+from flask import Flask, request
 from flask_pymongo import PyMongo
-from bson.json_util import dumps
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager
 from flask_cors import CORS
@@ -32,16 +30,12 @@ class DataLayer:
         last_name = request.get_json()['last_name']
         email = request.get_json()['email']
         password = bcrypt.generate_password_hash(request.get_json()['password']).decode('utf-8')
-        
-        list_of_places = ['ARE', 'AUS', 'BRA', 'CAN', 'CHE', 'CHN', 'DEU', 'GBR', 'IND','ISR', 'JPN', 'NLD', 'USA']
-        chosen_places = []
-        list_of_industries = ['Food and Beverage', 'Tech', 'Health', 'Toys', 'Fashion', 'Real Estate', 'Gaming',
-                              'Marketing']
-        chosen_industries = []
+        places = request.get_json()['places']
+        industries = request.get_json()['industries']
         if self.__db.students.find_one({"email": email}):
             added_investor = {'status': 'The email is already in the system!'}
         else:
-            new_investor = Investor(first_name, last_name, email, password)
+            new_investor = Investor(first_name, last_name, email, password, places, industries)
             self.__db.investors.insert_one(new_investor.__dict__)
             added_investor = {'status': 'The investor has been added!'}
         return added_investor
