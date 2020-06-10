@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Home from './components/Home'
 import Rating from './components/Rating'
-import { BrowserRouter as Router, NavLink, Switch, Route, Link, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Businesses from './components/Businesses';
 import RegisterInvestor from './components/RegisterInvestor';
 import ScrollTop from "react-scrolltop-button";

@@ -9,7 +9,7 @@ class NavBar extends Component {
     logOut(event) {
         event.preventDefault()
         localStorage.removeItem('usertoken')
-        this.props.history.push('/')
+        this.props.history.push('/home')
     }
 
     render() {
