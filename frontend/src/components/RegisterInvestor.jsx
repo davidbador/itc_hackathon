@@ -33,7 +33,8 @@ class RegisterInvestor extends Component {
             realEstate: false,
             gaming: false,
             marketing: false,
-            investors: []
+            investors: [],
+            listOfEmails: []
         }
 
         this.onChange = this.onChange.bind(this);
@@ -52,6 +53,16 @@ class RegisterInvestor extends Component {
         this.setState({
             investors: response.data
         })
+        this.loadEmails()
+    }
+
+    loadEmails() {
+        for (let i = 0; i < this.state.investors.investors.length; i++) {
+            let newEmail = this.state.listOfEmails.concat(this.state.investors.investors[i].email)
+            this.setState({
+                listOfEmails: newEmail
+            })
+        }
     }
 
     onChange(event) {
@@ -134,17 +145,15 @@ class RegisterInvestor extends Component {
             industries: this.state.industries
         }
 
-        if (newInvestor.firstName === '' || newInvestor.lastName === '' || newInvestor.email === '' || newInvestor.password === '' || newInvestor.places == [] || newInvestor.industries == []) {
+        if (newInvestor.firstName === '' || newInvestor.lastName === '' || newInvestor.email === '' || newInvestor.password === '' || newInvestor.places.length === 0 || newInvestor.industries.length === 0) {
             window.alert('Please make sure all fields are filled in!')
         } else {
-            for (let i = 0; i < this.state.investors.investors.length; i++) {
-                if (this.state.investors.investors[i].email === this.state.email) {
-                    window.alert('This user already exists with this email. Please try again!')
-                } else {
-                    register(newInvestor).then(res => {
-                        this.props.history.push('/login')
-                    })
-                }
+            if (this.state.listOfEmails.includes(this.state.email)) {
+                window.alert('This user already exists with this email. Please try again!')
+            } else {
+                register(newInvestor).then(res => {
+                    this.props.history.push('/login')
+                })
             }
         }
     }
