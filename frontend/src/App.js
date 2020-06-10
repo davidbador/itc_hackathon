@@ -17,7 +17,8 @@ function App() {
         <Router>
           <Redirect from='/' to='/home' />
           <ScrollTop
-            style={{ backgroundColor: "inherit" }} />
+            style={{ backgroundColor: "inherit" }} 
+            distance={200}/>
           <NavBar />
           <Switch>
             <Route exact path='/home'>
