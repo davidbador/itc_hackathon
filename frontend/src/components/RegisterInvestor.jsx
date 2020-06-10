@@ -54,7 +54,7 @@ class RegisterInvestor extends Component {
 
     handlePlacesArray(event, item) {
         if (this.state.places.includes(item)) {
-            this.removePlace(event)
+            this.removePlace(item)
         } else {
             let joined = this.state.places.push(item)
             this.setState({
@@ -64,28 +64,28 @@ class RegisterInvestor extends Component {
     }
 
     handleIndustriesArray(event, item) {
-        if (this.state.industries.push(item)) {
-            this.removeIndustry(event)
+        if (this.state.industries.includes(item)) {
+            this.removeIndustry(item)
         } else {
-            let joined = this.state.industries.concat(item)
+            let joined = this.state.industries.push(item)
             this.setState({
                 places: joined
             })
         }
     }
 
-    removePlace(event) {
+    removePlace(item) {
         let list = [...this.state.places]
-        let index = list.indexOf(event.target.value)
+        let index = list.indexOf(item)
         list.splice(index, 1)
         this.setState({
             places: list
         })
     }
 
-    removeIndustry(event) {
+    removeIndustry(item) {
         let list = [...this.state.industries]
-        let index = list.indexOf(event.target.value)
+        let index = list.indexOf(item)
         list.splice(index, 1)
         this.setState({
             industries: list
