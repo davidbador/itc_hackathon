@@ -35,6 +35,20 @@ def get_businesses():
     return response
 
 
+@app.route("/investors")
+def get_investors():
+    investors = dataLayer.get_investors()
+    all_investors = []
+
+    for i in investors:
+        all_investors.append(i)
+
+    response = app.response_class(response=(json.dumps({"investors": all_investors}, default=str)), status=200,
+                                  mimetype="application/json")
+
+    return response
+
+
 @app.route("/investors/register", methods=['POST'])
 def add_investor():
     return dataLayer.create_investor()

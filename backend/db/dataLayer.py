@@ -25,6 +25,10 @@ class DataLayer:
         businesses = self.__db.businesses.find()
         return businesses
 
+    def get_investors(self):
+        investors = self.__db.investors.find()
+        return investors
+
     def create_investor(self):
         first_name = request.get_json()['first_name']
         last_name = request.get_json()['last_name']
