@@ -2,7 +2,7 @@ import React from 'react';
 
 function Rating() {
     return (
-        <div className='App-header'>
+        <div className='App-header' style={{  background: 'transparent'}}>
 			<div className='Rating'>
 				<div className='Rate-box'>
 					<h1>Yaakov S.</h1>
